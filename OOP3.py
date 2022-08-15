@@ -1,4 +1,5 @@
 import random
+import sys
 
 
 class Card(object):
@@ -26,10 +27,13 @@ class Card(object):
             self.__color = 'Trefl'
         elif color == 'Karo':
             self.__color = 'Karo'
-        else:
+        elif color == False:
             random_list = ['Pik', 'Karo', 'Trefl', 'Kier']
             draw_lots = random.choice(random_list)
             self.__color = draw_lots
+        else:
+            print('Value Error')
+            raise SystemExit
 
     @property
     def value(self):
@@ -50,11 +54,13 @@ class Card(object):
             self.__value = 'Król'
         elif value == 'As':
             self.__value = 'As'
-        else:
+        elif value == False:
             random_value = ['Jopek', 'Dama', 'Król', 'As', 'Twoja stara']
             draw_value = random.choice(random_value)
             self.__value = draw_value
-
+        else:
+            print('Value Error')
+            raise SystemExit
 
     def Print_final(self):
         Przetasowanie_1.color

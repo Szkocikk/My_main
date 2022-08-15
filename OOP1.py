@@ -20,10 +20,23 @@ class User():
         print('logged in')
 
 class Wizard(User):
-    pass
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'attacking with power of {self.power}')
 
 class Archer(User):
-    pass
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
 
-wizard1 = Wizard()
-print(wizard1.sign_in())
+    def attack(self):
+        print(f'attacking with arrows: arrows left - {self.num_arrows}')
+
+
+wizard1 = Wizard('Merlin', 50)
+wizard2 = Wizard('Robi', 80)
+wizard1.attack()
+wizard2.attack()
